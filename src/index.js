@@ -11,10 +11,9 @@ class App extends React.Component {
     this.state = {
       quote: quotes[getRandomIndex(quotes.length)],
     }
-    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick () {
+  handleClick = () => {
     let nextQuote
     do {
       nextQuote = quotes[getRandomIndex(quotes.length)]
@@ -25,8 +24,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <Container id="quote-box"
-                 className="vh-100 d-flex align-items-center">
+      <Container className="align-items-center d-flex vh-100" id="quote-box">
         <Jumbotron className="m-0 w-100">
           <ShowQuote quote={this.state.quote}/>
           <GetQuote onClick={this.handleClick}/>
@@ -37,15 +35,12 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <App/>,
-  document.querySelector('#root'),
-)
+ReactDOM.render(<App/>, document.querySelector('#root'))
 
 function ShowQuote (props) {
   return (
     <blockquote className="blockquote text-center">
-      <p id="text" className="mb-0">{props.quote.text}</p>
+      <p className="mb-0" id="text">{props.quote.text}</p>
       <footer className="blockquote-footer">
         <cite id="author" title="Source Title">{props.quote.author}</cite>
       </footer>
@@ -55,8 +50,8 @@ function ShowQuote (props) {
 
 function GetQuote (props) {
   return (
-    <Button id="new-quote" variant="secondary" className="float-right btn-sm"
-            onClick={props.onClick}>
+    <Button className="btn-sm float-right" id="new-quote"
+            onClick={props.onClick} variant="secondary">
       New Quote
     </Button>
   )
@@ -68,7 +63,7 @@ function TweetQuote (props) {
       '"' + props.quote.text + '" ' + props.quote.author,
     )
   return (
-    <Button id="tweet-quote" className="float-left btn-sm" href={tweetQuoteURI}>
+    <Button id="tweet-quote" className="btn-sm float-left" href={tweetQuoteURI}>
       <i className="fa fa-twitter"/> Tweet
     </Button>
   )
