@@ -3,23 +3,39 @@ import ReactDOM from 'react-dom'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import { quotes } from './quotes'
 
 class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      quote: quotes[getRandomIndex(quotes.length)],
+      quote: {},
+      url: 'quotes.json',
     }
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick = () => {
-    let nextQuote
-    do {
-      nextQuote = quotes[getRandomIndex(quotes.length)]
-    }
-    while (nextQuote.text === this.state.quote.text)
-    this.setState({ quote: nextQuote })
+  componentDidMount () {
+    this.getQuote()
+  }
+
+  handleClick () {
+    this.getQuote()
+  }
+
+  getQuote () {
+    fetch(this.state.url)
+    .then(response => response.json())
+    .then(quotes => {
+      this.setState(state => {
+        let nextQuote
+        do {
+          nextQuote = quotes[getRandomIndex(quotes.length)]
+        }
+        while (nextQuote.text === state.quote.text)
+        return { quote: nextQuote }
+      })
+    })
+    .catch(error => console.error(error))
   }
 
   render () {
