@@ -7,24 +7,24 @@ import TweetQuote from './TweetQuote'
 import getRandomIndex from './getRandomIndex'
 import quotes from './quotes'
 
+function getRandomQuote (prevQuote) {
+  let nextQuote
+  do {
+    nextQuote = quotes[getRandomIndex(quotes.length)]
+  }
+  while (nextQuote.text === prevQuote.text)
+  return nextQuote
+}
+
 function App () {
   const [quote, setQuote] = useState({})
 
-  useEffect(() => getRandomQuote(), [])
+  useEffect(() => {
+    setQuote(prevQuote => getRandomQuote(prevQuote))
+  }, [])
 
   function handleClick () {
-    getRandomQuote()
-  }
-
-  function getRandomQuote () {
-    setQuote(prevQuote => {
-      let nextQuote
-      do {
-        nextQuote = quotes[getRandomIndex(quotes.length)]
-      }
-      while (nextQuote.text === prevQuote.text)
-      return nextQuote
-    })
+    setQuote(prevQuote => getRandomQuote(prevQuote))
   }
 
   return (
