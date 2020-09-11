@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import DisplayQuote from './DisplayQuote'
 import GetQuote from './GetQuote'
 import TweetQuote from './TweetQuote'
-import getRandomIndex from './getRandomIndex'
-import quotes from './quotes'
-
-function getRandomQuote (prevQuote) {
-  let nextQuote
-  do {
-    nextQuote = quotes[getRandomIndex(quotes.length)]
-  }
-  while (nextQuote.text === prevQuote.text)
-  return nextQuote
-}
+import getRandomQuote from './getRandomQuote'
 
 function App () {
   const [quote, setQuote] = useState({})
