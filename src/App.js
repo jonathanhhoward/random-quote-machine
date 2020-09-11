@@ -38,7 +38,7 @@ class App extends React.Component {
     return (
       <Container className="align-items-center d-flex vh-100" id="quote-box">
         <Jumbotron className="m-0 w-100">
-          <ShowQuote quote={this.state.quote}/>
+          <DisplayQuote quote={this.state.quote}/>
           <GetQuote onClick={this.handleClick}/>
           <TweetQuote quote={this.state.quote}/>
         </Jumbotron>
@@ -49,7 +49,7 @@ class App extends React.Component {
 
 export default App
 
-function ShowQuote (props) {
+function DisplayQuote (props) {
   return (
     <blockquote className="blockquote text-center">
       <p className="mb-0" id="text">{props.quote.text}</p>
