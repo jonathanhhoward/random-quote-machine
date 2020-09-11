@@ -2,8 +2,8 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 function TweetQuote (props) {
-  const query = encodeURIComponent('"' + props.quote.text + '" ' + props.quote.author)
-  const tweetQuoteURI = 'https://twitter.com/intent/tweet?text=' + query
+  const query = '?text=' + encodeURIComponent(`"${props.quote.text}" ${props.quote.author}`)
+  const tweetQuoteURI = 'https://twitter.com/intent/tweet' + query
 
   return (
     <Button
@@ -11,7 +11,7 @@ function TweetQuote (props) {
       className="btn-sm float-left"
       href={tweetQuoteURI}
     >
-      <i className="fa fa-twitter"/> Tweet
+      <i className="fa fa-twitter"/> Tweet Quote
     </Button>
   )
 }
