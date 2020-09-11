@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import DisplayQuote from './DisplayQuote'
-import GetQuote from './GetQuote'
-import TweetQuote from './TweetQuote'
+import DisplayQuote from './components/DisplayQuote'
+import GetQuote from './components/GetQuote'
+import TweetQuote from './components/TweetQuote'
 import getRandomQuote from './getRandomQuote'
 
 function App () {
