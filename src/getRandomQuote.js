@@ -1,5 +1,8 @@
 import quotes from './quotes'
-import getRandomIndex from './getRandomIndex'
+
+function getRandomIndex (arrayLength) {
+  return Math.floor(Math.random() * arrayLength)
+}
 
 function getRandomQuote (prevQuote) {
   let nextQuote
