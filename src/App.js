@@ -5,14 +5,12 @@ import DisplayQuote from './DisplayQuote'
 import GetQuote from './GetQuote'
 import TweetQuote from './TweetQuote'
 import getRandomIndex from './getRandomIndex'
+import quotes from './quotes'
 
 class App extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      quote: {},
-      url: 'quotes.json'
-    }
+    this.state = { quote: {} }
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -25,16 +23,14 @@ class App extends React.Component {
   }
 
   getQuote () {
-    fetch(this.state.url).then(response => response.json()).then(quotes => {
-      this.setState(state => {
-        let nextQuote
-        do {
-          nextQuote = quotes[getRandomIndex(quotes.length)]
-        }
-        while (nextQuote.text === state.quote.text)
-        return { quote: nextQuote }
-      })
-    }).catch(error => console.error(error))
+    this.setState(state => {
+      let nextQuote
+      do {
+        nextQuote = quotes[getRandomIndex(quotes.length)]
+      }
+      while (nextQuote.text === state.quote.text)
+      return { quote: nextQuote }
+    })
   }
 
   render () {
