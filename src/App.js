@@ -2,6 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import getRandomIndex from './getRandomIndex'
 
 class App extends React.Component {
   constructor (props) {
@@ -79,8 +80,4 @@ function TweetQuote (props) {
       <i className="fa fa-twitter"/> Tweet
     </Button>
   )
-}
-
-function getRandomIndex (arrayLength) {
-  return Math.floor(Math.random() * arrayLength)
 }
