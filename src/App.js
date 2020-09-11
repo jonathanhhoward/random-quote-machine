@@ -15,14 +15,14 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getQuote()
+    this.getRandomQuote()
   }
 
   handleClick () {
-    this.getQuote()
+    this.getRandomQuote()
   }
 
-  getQuote () {
+  getRandomQuote () {
     this.setState(state => {
       let nextQuote
       do {
