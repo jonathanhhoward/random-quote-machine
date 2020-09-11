@@ -18,7 +18,10 @@ function App () {
   }
 
   return (
-    <Container className="align-items-center d-flex vh-100" id="quote-box">
+    <Container
+      className="align-items-center d-flex vh-100"
+      id="quote-box"
+    >
       <Jumbotron className="m-0 w-100">
         <DisplayQuote quote={quote}/>
         <GetQuote onClick={handleClick}/>
