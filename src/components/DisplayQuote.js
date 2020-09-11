@@ -1,20 +1,20 @@
 import React from 'react'
 
-function DisplayQuote (props) {
+function DisplayQuote ({ quote }) {
   return (
     <blockquote className="blockquote text-center">
       <p
         className="mb-0"
         id="text"
       >
-        {props.quote.text}
+        {quote.text}
       </p>
       <footer className="blockquote-footer">
         <cite
           id="author"
           title="Source Title"
         >
-          {props.quote.author}
+          {quote.author}
         </cite>
       </footer>
     </blockquote>

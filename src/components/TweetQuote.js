@@ -1,8 +1,8 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 
-function TweetQuote (props) {
-  const query = '?text=' + encodeURIComponent(`"${props.quote.text}" ${props.quote.author}`)
+function TweetQuote ({ quote }) {
+  const query = '?text=' + encodeURIComponent(`"${quote.text}" ${quote.author}`)
   const tweetQuoteURI = 'https://twitter.com/intent/tweet' + query
 
   return (
