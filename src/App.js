@@ -1,9 +1,9 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import DisplayQuote from './DisplayQuote'
 import GetQuote from './GetQuote'
+import TweetQuote from './TweetQuote'
 import getRandomIndex from './getRandomIndex'
 
 class App extends React.Component {
@@ -51,15 +51,3 @@ class App extends React.Component {
 }
 
 export default App
-
-function TweetQuote (props) {
-  const tweetQuoteURI = 'https://twitter.com/intent/tweet?text=' +
-    encodeURIComponent(
-      '"' + props.quote.text + '" ' + props.quote.author
-    )
-  return (
-    <Button id="tweet-quote" className="btn-sm float-left" href={tweetQuoteURI}>
-      <i className="fa fa-twitter"/> Tweet
-    </Button>
-  )
-}
