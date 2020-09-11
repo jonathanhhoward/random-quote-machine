@@ -2,6 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import DisplayQuote from './DisplayQuote'
 import getRandomIndex from './getRandomIndex'
 
 class App extends React.Component {
@@ -49,17 +50,6 @@ class App extends React.Component {
 }
 
 export default App
-
-function DisplayQuote (props) {
-  return (
-    <blockquote className="blockquote text-center">
-      <p className="mb-0" id="text">{props.quote.text}</p>
-      <footer className="blockquote-footer">
-        <cite id="author" title="Source Title">{props.quote.author}</cite>
-      </footer>
-    </blockquote>
-  )
-}
 
 function GetQuote (props) {
   return (
