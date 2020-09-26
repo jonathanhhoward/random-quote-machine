@@ -1,7 +1,7 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button'
+import React from 'react';
+import Button from 'react-bootstrap/Button';
 
-function GetQuote ({ onClick }) {
+function GetQuote({ onClick }) {
   return (
     <Button
       className="btn-sm float-right"
@@ -11,7 +11,7 @@ function GetQuote ({ onClick }) {
     >
       New Quote
     </Button>
-  )
+  );
 }
 
-export default GetQuote
+export default GetQuote;
