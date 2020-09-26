@@ -33,5 +33,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://jonathanhhoward.github.io/random-quote-machine"
+  "homepage": "https://jonathanhhoward.github.io/random-quote-machine",
+  "devDependencies": {
+    "prettier": "2.1.2"
+  }
 }
